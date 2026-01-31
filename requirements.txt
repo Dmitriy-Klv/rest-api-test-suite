@@ -1,0 +1,5 @@
+pytest
+requests
+pydantic
+python-dotenv
+pytest-html
