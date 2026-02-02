@@ -19,3 +19,8 @@ class TestPosts:
         assert post.id == 1
         assert isinstance(post.title, str)
         assert len(post.title) > 0
+
+    def test_get_non_existent_post_returns_404(self):
+        response = self.post_client.get_post(9999)
+
+        assert response.status_code == 404
