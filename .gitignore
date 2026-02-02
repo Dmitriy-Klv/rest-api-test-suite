@@ -4,4 +4,4 @@ __pycache__/
 .pytest_cache/
 *.html
 *.log
-./idea
+.idea/
