@@ -1,58 +1,21 @@
-from http.client import responses
-
-from api.post_client import PostClient
-from models.post_model import Post
+import pytest
 
 
 class TestPosts:
-    def setup_method(self):
-        self.post_client = PostClient()
 
-    def test_get_post_1_status_code(self):
-        response = self.post_client.get_post(1)
-        assert response.status_code == 200
+    @pytest.mark.parametrize("post_id", [1, 2, 3])
+    def test_get_post_status_code(self, get_post, post_id):
+        get_post(post_id)
 
-    def test_get_post_1_data_validation(self):
-        response = self.post_client.get_post(1)
-        data = response.json()
+    @pytest.mark.parametrize("post_id", [1, 2, 3])
+    def test_get_post_data_validation(self, valid_post, post_id):
+        post = valid_post(post_id)
 
-        post = Post(**data)
-
-        assert post.id == 1
+        assert post.id == post_id
         assert isinstance(post.title, str)
-        assert len(post.title) > 0
+        assert post.title
+        assert isinstance(post.user_id, int)
+        assert post.user_id > 0
 
-    def test_get_non_existent_post_returns_404(self):
-        response = self.post_client.get_post(9999)
-
-        assert response.status_code == 404
-
-    def test_get_post_2_status_code(self):
-        response = self.post_client.get_post(2)
-        assert response.status_code == 200
-
-    def test_get_post_2_data_validation(self):
-        response = self.post_client.get_post(2)
-        data = response.json()
-
-        post = Post(**data)
-
-        assert post.id == 2
-        assert post.user_id == 1
-        assert isinstance(post.title, str)
-        assert len(post.title) > 0
-
-    def test_get_post_3_status_code(self):
-        response = self.post_client.get_post(3)
-        assert response.status_code == 200
-
-    def test_get_post_3_data_validation(self):
-        response = self.post_client.get_post(3)
-        data = response.json()
-
-        post = Post(**data)
-
-        assert post.id == 3
-        assert post.user_id == 1
-        assert isinstance(post.title, str)
-        assert len(post.title) > 0
+    def test_get_non_existent_post_returns_404(self, get_post):
+        get_post(9999, expected_status=404)
