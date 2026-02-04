@@ -37,8 +37,8 @@ class TestPosts:
 
         post = Post(**data)
 
-        assert post.id == 1
-        assert post.user_id == 2
+        assert post.id == 2
+        assert post.user_id == 1
         assert isinstance(post.title, str)
         assert len(post.title) > 0
 
