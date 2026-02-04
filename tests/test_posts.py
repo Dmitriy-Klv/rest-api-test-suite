@@ -38,6 +38,21 @@ class TestPosts:
         post = Post(**data)
 
         assert post.id == 2
+        assert post.user_id == 2
+        assert isinstance(post.title, str)
+        assert len(post.title) > 0
+
+    def test_get_post_3_status_code(self):
+        response = self.post_client.get_post(3)
+        assert response.status_code == 200
+
+    def test_get_post_3_data_validation(self):
+        response = self.post_client.get_post(3)
+        data = response.json()
+
+        post = Post(**data)
+
+        assert post.id == 3
         assert post.user_id == 1
         assert isinstance(post.title, str)
         assert len(post.title) > 0
