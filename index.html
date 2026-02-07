@@ -6,37 +6,67 @@
   <title>REST API Test Suite</title>
   <style>
     body {
-      font-family: system-ui, sans-serif;
-      background: #0f0f11;
-      color: #e0e0e0;
       margin: 0;
-      padding: 40px;
-      text-align: center;
-      line-height: 1.6;
+      padding: 0;
+      font-family: system-ui, sans-serif;
+      background: #000;
+      color: #eee;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
-    h1 { color: #00d4ff; margin-bottom: 0.5rem; }
-    p { max-width: 600px; margin: 1rem auto; opacity: 0.9; }
-    a { color: #00d4ff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container { max-width: 800px; margin: 0 auto; }
+    .content {
+      max-width: 700px;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: #0ea5e9;
+    }
+    p {
+      font-size: 1.25rem;
+      opacity: 0.85;
+      margin: 1rem 0;
+    }
+    .links {
+      margin-top: 2rem;
+    }
+    a {
+      color: #0ea5e9;
+      text-decoration: none;
+      font-size: 1.2rem;
+      margin: 0 1.5rem;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      position: fixed;
+      bottom: 1rem;
+      opacity: 0.5;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="content">
     <h1>REST API Test Suite</h1>
-    <p>Automated testing framework for JSONPlaceholder API</p>
+    <p>Automated testing for JSONPlaceholder API</p>
+    <p>Python • pytest • requests • Pydantic</p>
 
-    <p>Technologies: Python, pytest, requests, Pydantic</p>
-
-    <p>
-      <a href="https://github.com/Dmitriy-Klv/rest-api-test-suite" target="_blank">
-        → GitHub Repository
-      </a>
-    </p>
-
-    <p>
-      <a href="report.html">Latest Test Report</a> (when deployed)
-    </p>
+    <div class="links">
+      <a href="https://github.com/Dmitriy-Klv/rest-api-test-suite">GitHub</a>
+      <a href="report.html">Test Report</a>
+      <a href="https://github.com/Dmitriy-Klv/rest-api-test-suite/actions">CI</a>
+    </div>
   </div>
+
+  <footer>
+    © 2026 Dmitriy-Klv
+  </footer>
 </body>
 </html>
