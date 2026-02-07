@@ -23,6 +23,7 @@ rest-api-test-suite/
 └── README.md       # Project documentation
 ```
 
+
 ## ⚙️ Technical Specifications
 * **Core:** Python 3.10+
 * **Test Engine:** `pytest`
