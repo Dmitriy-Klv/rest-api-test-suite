@@ -7,6 +7,13 @@
 
 A technical demonstration of an automated testing framework for RESTful APIs. This project implements a modular architecture using Python, focusing on contract testing and data integrity validation.
 
+## 📊 Test Reports
+
+Allure reports are generated during CI runs and published via GitHub Pages for public access.
+
+🔗 **Latest Report:** [Allure Dashboard](https://Dmitriy-Klv.github.io/rest-api-test-suite/)
+
+
 ## 🌐 Target Service Specification
 This project demonstrates  API testing skills using the [JSONPlaceholder](https://jsonplaceholder.typicode.com/) public API.   
 
