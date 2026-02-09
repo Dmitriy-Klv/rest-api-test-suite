@@ -13,14 +13,27 @@ This project demonstrates  API testing skills using the [JSONPlaceholder](https:
 ## 📂 Project Structure
 ```text
 rest-api-test-suite/
-├── api/            # API Clients & Base Request wrappers
-├── models/         # Pydantic data models for schema validation
-├── tests/          # Functional & Contract test cases
-├── .env            # Environment variables (BASE_URL, etc.)
-├── .gitignore      # Git exclusion rules
-├── requirements.txt # Project dependencies
-├── LICENSE         # MIT License
-└── README.md       # Project documentation
+│
+├── api/
+│   ├── base_api.py          # Base API client (session, headers, request handling)
+│   └── post_client.py       # Posts API client
+│
+├── models/
+│   └── post_model.py        # Pydantic models for response validation
+│
+├── tests/
+│   └── posts/
+│       ├── test_get_posts_validation.py
+│       ├── test_get_posts_behavior.py
+│       ├── test_get_posts_headers.py
+│       └── test_get_posts_performance.py
+│
+├── .env                     # Environment variables (BASE_URL)
+├── .gitignore               # Git ignore rules
+├── requirements.txt         # Python dependencies
+├── LICENSE                  # MIT License
+└── README.md                # Project documentation
+
 ```
 
 
