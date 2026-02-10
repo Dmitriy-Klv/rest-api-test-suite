@@ -13,7 +13,9 @@ logger = logging.getLogger(__name__)
 class BaseAPI:
     DEFAULT_TIMEOUT = 5
     SENSITIVE_HEADERS = {"Authorization", "Cookie", "Set-Cookie", "X-Api-Key", "Token"}
-    SENSITIVE_DATA_KEYS = {"email", "phone", "password", "address", "zipcode"}
+    SENSITIVE_DATA_KEYS = {"email", "phone", "password", "address", "zipcode",
+                           "street", "city", "iban", "bic", "birthday"
+                           }
 
     def __init__(self):
         self.base_url = os.getenv("BASE_URL")
