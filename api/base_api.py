@@ -113,3 +113,13 @@ class BaseAPI:
 
     def post(self, endpoint, json=None, **kwargs):
         return self._send_request("POST", endpoint, json=json, **kwargs)
+
+    def put(self, endpoint, json=None, **kwargs):
+        return self._send_request("PUT", endpoint, json=json, **kwargs)
+
+    def patch(self, endpoint, json=None, **kwargs):
+        return self._send_request("PATCH", endpoint, json=json, **kwargs)
+
+    def delete(self, endpoint, **kwargs):
+        return self._send_request("DELETE", endpoint, **kwargs)
+
