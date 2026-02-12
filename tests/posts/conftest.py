@@ -3,6 +3,9 @@ from api.post_client import PostClient
 from models.post_model import Post
 import time
 import random
+from utils.logger import setup_logging
+
+setup_logging()
 
 @pytest.fixture
 def post_client():
